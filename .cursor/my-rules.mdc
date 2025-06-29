@@ -1,0 +1,15 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: 
+globs: 
+alwaysApply: true
+---
+- Use pnpm as the package manager.
+- Use Next.js 15 as the framework.
+- Use Tailwind CSS for all styling.
+- Prefer short variable name. index -> idx, value -> val
+- Prefer type to interface for type declaration
