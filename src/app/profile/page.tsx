@@ -12,7 +12,10 @@ export default async function ProfilePage() {
 
   return (
     <div>
-      <Link href="/me">go Me</Link>
+      <div className="flex flex-col gap-2">
+        <Link href="/me">go Me (prefetch)</Link>
+        <Link href="/my">go My (client)</Link>
+      </div>
       <p>{data.name}</p>
     </div>
   );

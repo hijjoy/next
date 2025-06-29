@@ -1,8 +1,4 @@
-import {
-  dehydrate,
-  HydrationBoundary,
-  QueryClient,
-} from "@tanstack/react-query";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { serverFetchWithAuth } from "@/lib/serverFetchWithAuth";
 import UserInfo from "./_components/user-info";
 import getQueryClient from "@/configs/tanstack-query/get-query-client";

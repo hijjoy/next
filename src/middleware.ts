@@ -9,11 +9,11 @@ export default async function middleware(req: NextRequest) {
   const accessToken = req.cookies.get("accessToken")?.value;
   const refreshToken = req.cookies.get("refreshToken")?.value;
 
-  // 2. 보호 경로만 처리 (matcher로도 가능)
-  const { pathname } = req.nextUrl;
-  if (!pathname.startsWith("/me") && !pathname.startsWith("/profile")) {
-    return NextResponse.next();
-  }
+  // // 2. 보호 경로만 처리 (matcher로도 가능)
+  // const { pathname } = req.nextUrl;
+  // if (!pathname.startsWith("/me") && !pathname.startsWith("/profile")) {
+  //   return NextResponse.next();
+  // }
 
   // 3. accessToken이 없으면 로그인 리다이렉트
   if (!accessToken) {

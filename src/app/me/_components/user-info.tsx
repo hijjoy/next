@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { fetchWithAuth } from "@/lib/fetchWithAuth";
 
-async function fetchUser() {
+export async function fetchUser() {
   console.log("=== CSR  실행 ===");
 
   const res = await fetchWithAuth(
