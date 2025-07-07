@@ -1,7 +1,7 @@
 import getQueryClient from "@/shared/configs/tanstack-query/get-query-client";
 import ProfileSection from "../sections/profile-section";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { getSSRContext } from "../../context/ssr-user-context";
+import { getSSRContext } from "@/shared/context/ssr-context";
 
 export default async function ProfileView() {
   const queryClient = getQueryClient();

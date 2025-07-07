@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import { UserLoginReq } from "../../dto/request/user-login-req";
-import { useContext } from "../context/user-context";
+import { useContext } from "@/shared/context/context";
 import { useRouter } from "next/navigation";
 
 export function usePostLogin() {

@@ -1,5 +1,5 @@
+import { useContext } from "@/shared/context/context";
 import { queryOptions } from "@tanstack/react-query";
-import { useContext } from "../context/user-context";
 
 export function useGetMyProfile() {
   const { userService } = useContext();
