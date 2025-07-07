@@ -9,6 +9,7 @@ const userService = UserService.getInstance(userClient);
 
 interface UserContextStore {
   userService: UserService;
+  // 앞으로 다른 서비스도 여기에 추가 가능
 }
 
 export const useContext = create<UserContextStore>(() => ({

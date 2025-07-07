@@ -15,6 +15,11 @@ export default class UserService {
     return UserService.instance;
   }
 
+  // ✅ SSR 전용 인스턴스 생성
+  public static createInstance(userClient: UserClientImplements) {
+    return new UserService(userClient);
+  }
+
   public static resetInstance() {
     UserService.instance = undefined;
   }

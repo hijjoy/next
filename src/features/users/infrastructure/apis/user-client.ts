@@ -23,6 +23,11 @@ export class UserClient implements UserClientImplements {
     UserClient.instance = undefined;
   }
 
+  // ✅ SSR에서는 이 메서드 사용
+  public static createInstance(httpClient: HttpClient) {
+    return new UserClient(httpClient);
+  }
+
   async login(params: UserLoginReq): Promise<UserLoginRes> {
     return this.httpClient.post("/v1/auth/signin", params);
   }
