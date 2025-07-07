@@ -31,8 +31,6 @@ export default class UserService {
   async getProfile(): Promise<ProfileRes["data"]> {
     const { data } = await this.userClient.getProfile();
 
-    console.log(data);
-
     return data;
   }
 }
