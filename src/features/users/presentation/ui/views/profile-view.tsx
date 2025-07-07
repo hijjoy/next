@@ -1,10 +1,24 @@
+import getQueryClient from "@/shared/configs/tanstack-query/get-query-client";
 import ProfileSection from "../sections/profile-section";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
+import { getSSRContext } from "../../context/ssr-user-context";
 
-export default function ProfileView() {
+export default async function ProfileView() {
+  const queryClient = getQueryClient();
+  const { userService } = await getSSRContext();
+
+  queryClient.prefetchQuery({
+    queryKey: ["profile"],
+    queryFn: () => userService.getProfile(),
+  });
+
+  const dehydratedState = dehydrate(queryClient);
+
   return (
     <div className="flex flex-col gap-4">
-      ProfileView
-      <ProfileSection />
+      <HydrationBoundary state={dehydratedState}>
+        <ProfileSection />
+      </HydrationBoundary>
     </div>
   );
 }
